@@ -1,0 +1,10 @@
+nvm install 8.11.2
+nvm install latest
+
+nvm list
+nvm use 8.11.2
+
+
+npm install @angular/cli
+
+npm install -g @angular/cli@7.1.4

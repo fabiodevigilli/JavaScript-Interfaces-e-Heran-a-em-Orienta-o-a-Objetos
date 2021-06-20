@@ -1,0 +1,9 @@
+*** Abrir o power shel
+
+* Para entrar na pasta use:
+- cd C:\Repositórios\JavaScript-primeiros-passos-com-a-linguagem\JS_curso_01
+
+* Para acessar o arquivo JS, que queremos rodar:
+- node .\1-meuPrimeiroPrograma.js
+OBS: neste caso, digitamos node 1- e pressionamos "TAB" que o power shell vai auto completar o nome do arquivo.
+
