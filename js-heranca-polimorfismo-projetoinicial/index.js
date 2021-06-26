@@ -1,17 +1,22 @@
-import {Cliente} from "./Cliente.js"
-import {ContaCorrente} from "./ContaCorrente.js"
-import { ContaPoupanca } from './ContaPoupanca.js';
+import { Cliente } from "./Cliente.js"
+import { Gerente } from "./Funcionarios/Gerente.js"
+import { Diretor } from "./Funcionarios/Diretor.js"
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js"
 
-const cliente1 = new Cliente("Ricardo", 11122233309);
+// Dois cliques para selecionar uma palavra, crtl+d, para acessar proxima referencia daquela palavra.
 
-const contaCorrenteRicardo = new ContaCorrente(1001, cliente1);
-contaCorrenteRicardo.depositar(500);
-contaCorrenteRicardo.sacar(100);
+const diretor = new Diretor("Rodrigo", 10000, 12345678900);
+diretor.cadastrarSenha("123456");
+const gerente = new Gerente("Ricardo", 5000, 12378945601);
+gerente.cadastrarSenha("123");
+const cliente1 = new Cliente("Fulano", 11111111111, "456");
 
-const contaPoupanca = new ContaPoupanca(50, cliente1, 1001);
-contaPoupanca.sacar(10);
 
-console.log(contaPoupanca);
-console.log(contaCorrenteRicardo);
+// Polimorfismo
+const estaLogadoDiretor = SistemaAutenticacao.login(diretor, "123456");
+const estaLogadoGerente = SistemaAutenticacao.login(gerente, "123");
+const estaLogadoCliente = SistemaAutenticacao.login(cliente1, "456");
 
-//contaCorrenteRicardo.teste();
+console.log(`Diretor: ${estaLogadoDiretor}`);
+console.log(`Gerente: ${estaLogadoGerente}`);
+console.log(`Cliente1: ${estaLogadoCliente}`);
